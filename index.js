@@ -76,6 +76,10 @@ function buildAccount(){
 }
 
 function consultar(){
+    if(!fs.existsSync('accounts')){
+        console.log(chalk.bgRed.black('Por favor crie uma conta primeiro!'))
+        return operation()
+    }
     inquirer.prompt([{
         name: 'accountName',
         message: 'Digite o nome da sua conta:'
@@ -97,6 +101,10 @@ function consultar(){
 }
 
 function deposit(){
+    if(!fs.existsSync('accounts')){
+        console.log(chalk.bgRed.black('Por favor crie uma conta primeiro!'))
+        return operation()
+    }
     inquirer.prompt([{
         name: 'accountName',
         message: 'Digite o nome da sua conta:'
@@ -126,6 +134,10 @@ function deposit(){
 }
 
 function saque(){
+    if(!fs.existsSync('accounts')){
+        console.log(chalk.bgRed.black('Por favor crie uma conta primeiro!'))
+        return operation()
+    }
     inquirer.prompt([{
         name: 'accountName',
         message: 'Digite o nome da sua conta:'
